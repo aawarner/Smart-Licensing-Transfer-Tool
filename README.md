@@ -25,10 +25,7 @@ The process workflow assumes the customer already has created a Smart Account (w
 ![diagram](docs/SLT-Workflow.png)
 
 #### **Requirements**
-Python 3 with these packages:
-* json
-* os
-* sys
+Python 3 with this package:
 * request
 
 #### **Setup and Operation**
@@ -38,30 +35,34 @@ Python 3 with these packages:
 * Ensure "Client Credentials Grant" & "Resource Owner Grant" is selected
 * Copy "client_id" and "client_secret" credentials and store in a **safe** location
 
-2.) Install Python 3 and required packages. See [Requirements](#requirements)
+2.) Install Python 3 and required package. See [Requirements](#requirements)
+```
+pip install request
+```
 
-3.) Clone the BLT repository from Github/DEVNET
+3.) Clone the SLT repository from Github
+
+* Github link: [SLT](https://github.com/ogjp/Smart-Licensing-Transfer-Tool.git)
 
 4.) Setup local Python environment 
 
-* Ensure the "creds.json" file contains the "client_id" and "client_secret" is the correct format
-```
-   creds.json Format
-   
+* Create the "creds.json" file and place in the same directory as the script. Ensure the file contains the "client_id" and "client_secret" in the correct json format:
+
+```   
 {"client_id": "xxxxxxxxxxxxxxxxxxxxx", "client_secret": "xxxxxxxxxxxxxxxx"}
 ```
-* Ensure Python "Environment Variables" for USERNAME= AND PASSWORD= are set in the IDE
+* Ensure Python import the "Environment Variables" for "USERNAME=myname" AND "PASSWORD=mypass". These values can be set in an IDE or in the user OS profile. For example:
 
-![diagram](docs/EnvironmentVariables.png)
+```
+export USERNAME="myname"
+export PASSWORD="mypassword"
+```
 
 5.) Run the Python script to transfer licenses as needed. 
-```
-python SL-Pull-Token-Transfer-Licenses-Between-VAs.py
-```
 
-*Note, the script references the "licenses.json" for bulk transfers first. If the file is not present, the script prompts the user for input.
+* The script looks for the "licenses.json" file to import customer/license data at run time. If the file is not present, the script prompts the user for manual input. The user should create the "licenses.json" file if not already present. NOTE - The CSSM API supports a maximum of 10 license "type" transfers per single request. The below example is considered two license types, each with 10,000 licenses. The "licenses.json" file must follow the format below:
+
 ```
-    licences.json Format
 [
 {
     "smart_account": "smart account domain here",
@@ -80,6 +81,11 @@ python SL-Pull-Token-Transfer-Licenses-Between-VAs.py
     "quantity": 10000
   }
 ]
+```
+
+* Execute the script in terminal
+```
+python SL-Transfer-App.py
 ```
 
 #### **License**
