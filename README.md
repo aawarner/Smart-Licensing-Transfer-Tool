@@ -9,7 +9,7 @@ The Smart Licensing Transfer (SLT) tool is a Python application that utilizes Ci
 * [Overview of Solution Components](#overview-of-solution-components)
 * [SLT Process Workflow](#slt-process-workflow)
 * [Requirements](#requirements)
-* [Step-by-Step Setup & Operation](#step-by-step-setup-&-operation)
+* [Setup and Operation](#setup-and-operation)
 * [License](#license)
 * [Technical Support](#technical-support)
   
@@ -31,7 +31,7 @@ Python 3 with these packages:
 * sys
 * request
 
-#### **Step-by-Step Setup & Operation**
+#### **Setup and Operation**
 
 1.) Request API access and register SLT Application - Follow the [Request API Access Guide](https://apidocs-prod.cisco.com/?path=requestapiinfo)
     
