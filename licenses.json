@@ -1,0 +1,18 @@
+[
+{
+    "smart_account": "smart account domain here",
+    "transfer_from_va": "virtual account transferring licenses from here",
+    "transfer_to_va": "virtual account transferring licenses to here",
+    "license": "license name here",
+    "licenseType": "license type here PERPETUAL or TERM",
+    "quantity": 10000
+  },
+  {
+    "smart_account": "smart account domain here",
+    "transfer_from_va": "virtual account transferring licenses from here",
+    "transfer_to_va": "virtual account transferring licenses to here",
+    "license": "license name here",
+    "licenseType": "license type here PERPETUAL or TERM",
+    "quantity": 10000
+  }
+]
